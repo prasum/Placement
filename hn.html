@@ -1,0 +1,337 @@
+
+
+
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+ <link href="css/bootstrap.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet">
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="bootstrap/js/tab.js"></script>
+  <script src="bootstrap/js/jquery-1.11.1.min.js"></script>
+  <script src="bootstrap/js/bootstrap.js"></script>
+ <script>
+     $(document).ready(function() {
+         $('#branch').append('<option>Select Branch</option>');
+         $('#branch').append('<option>ComputerScience</option>');
+         $('#branch').append('<option>Electrical</option>');
+         $('#branch').append('<option>Electronics and Communication</option>');
+         $('#branch').append('<option>Mechanical</option>');
+         $('#tier').append('<option>Select tier</option>');
+         $('#tier').append('<option>I</option>');
+         $('#tier').append('<option>II</option>');
+         $('#tier').append('<option>III</option>');
+         $('#type').append('<option>Type of Internship/Placement</option>');
+         $('#type').append('<option>6 weeks</option>');
+         $('#type').append('<option>6 months</option>');
+         $('#type').append('<option>Full Time</option>');
+
+
+         $('#branch').on('change', function () {
+             var m = $("#branch option:selected").text();
+
+             if (m == 'ComputerScience') {
+                 $('#skill1').append('<option>Select Skill 1</option>');
+                 $('#skill1').append('<option>Algorithms</option>');
+                 $('#skill1').append('<option>Data Structures</option>');
+                 $('#skill1').append('<option>Web Development</option>');
+                 $('#skill1').append('<option>Computer Networking</option>');
+                 $('#skill1').append('<option>Database Management</option>');
+                 $('#skill2').append('<option>Select Skill 2</option>');
+                 $('#skill2').append('<option>Algorithms</option>');
+                 $('#skill2').append('<option>Data Structures</option>');
+                 $('#skill2').append('<option>Web Development</option>');
+                 $('#skill2').append('<option>Computer Networking</option>');
+                 $('#skill2').append('<option>Database Management</option>');
+                 $('#skill3').append('<option>Select Skill 3</option>');
+                 $('#skill3').append('<option>Algorithms</option>');
+                 $('#skill3').append('<option>Data Structures</option>');
+                 $('#skill3').append('<option>Web Development</option>');
+                 $('#skill3').append('<option>Computer Networking</option>');
+                 $('#skill3').append('<option>Database Management</option>');
+
+             }
+         });
+         $('#skill1').on('change', function ()
+         {
+             var n = $("#skill1 option:selected").text();
+             var index = $('#skill1').get(0).selectedIndex;
+             $('#skill2 option:eq(' + index + ')').remove();
+             $('#skill3 option:eq(' + index + ')').remove();
+
+
+
+
+
+
+         });
+         $('#skill2').on('change', function ()
+         {
+             var p = $("#skill2 option:selected").text();
+             var index1 = $('#skill2').get(0).selectedIndex;
+
+             $('#skill3 option:eq(' + index1 + ')').remove();
+
+
+
+
+
+
+         });
+         $('#skill3').on('change', function ()
+         {
+             var r = $("#skill3 option:selected").text();
+             var index2 = $('#skill3').get(0).selectedIndex;
+
+
+
+
+
+
+
+
+
+
+
+         });
+
+
+
+     });
+ </script>
+
+
+
+<div class="container">
+	<div class="row">
+        <div class="span12">
+    		<div class="" id="loginModal">
+              <div class="modal-header">
+                
+                <h3>Create User Profile</h3>
+              </div>
+              <div class="modal-body">
+                <div class="well">
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#login" data-toggle="tab">Personal Details</a></li>
+                    <li><a href="#create" data-toggle="tab">Educational Details</a></li>
+                    <li> <a href="#skill" data-toggle="tab">Skills </a> </li>
+                  </ul>
+                  <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active in" id="login">
+                      <form class="form-horizontal" action='' method="POST">
+                        <br>
+                        <fieldset>
+                          <div id="legend">
+                            <legend class="">Personal Details</legend>
+                          </div>    
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">Name</label>
+                            <div class="controls">
+                              <input type="text" id="username" name="username" placeholder="Enter Name" class="input-xlarge">
+                            </div>
+                          </div>
+     
+                          <div class="control-group">
+                            <!-- Password-->
+                            <label class="control-label" for="password">Roll No</label>
+                            <div class="controls">
+                              <input type="password" id="password" name="password" placeholder="Enter Roll No" class="input-xlarge">
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <!-- Password-->
+                            <label class="control-label" for="password">Mobile No</label>
+                            <div class="controls">
+                              <input type="password" id="password" name="password" placeholder="Enter Mobile No" class="input-xlarge">
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <!-- Password-->
+                            <label class="control-label" for="password">Facebook link</label>
+                            <div class="controls">
+                              <input type="password" id="password" name="password" placeholder="Enter Facebook Profile Link" class="input-xlarge">
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <!-- Password-->
+                            <label class="control-label" for="password">LinkedIn link</label>
+                            <div class="controls">
+                              <input type="password" id="password" name="password" placeholder="Enter LinkedIn Profile Link" class="input-xlarge">
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <!-- Password-->
+                            <label class="control-label" for="password">Skype Link</label>
+                            <div class="controls">
+                              <input type="password" id="password" name="password" placeholder="Enter Skype Profile Link" class="input-xlarge">
+                            </div>
+                          </div>
+     
+                          <br>
+                          <div class="control-group">
+                            <!-- Button -->
+                            <div class="controls">
+                              <button class="btn btn-success btn-lg" name="save1" id="save1">Save</button>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>                
+                    </div>
+                    <div class="tab-pane fade" id="create">
+                      <form id="tab">
+                        <br>
+                        <fieldset>
+                          <div id="legend">
+                            <legend class="">Educational Details</legend>
+                          </div>  
+                         <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">Class 10 percentage</label>
+                            <div class="controls">
+                              <input type="text" id="username" name="username" placeholder="Enter class 10 percentage" class="input-xlarge">
+                            </div>
+                          </div>
+                           <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">Class 12 percentage</label>
+                            <div class="controls">
+                              <input type="text" id="username" name="username" placeholder="Enter class 12 percentage" class="input-xlarge">
+                            </div>
+                          </div>
+                           <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username"> Overall CGPA</label>
+                            <div class="controls">
+                              <input type="text" id="username" name="username" placeholder="Enter CGPA" class="input-xlarge">
+                            </div>
+                          </div>
+                           <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">SGPA for Semester 1</label>
+                            <div class="controls">
+                              <input type="text" id="username" name="username" placeholder="Enter SGPA for Semester 1" class="input-xlarge">
+                            </div>
+                          </div>
+                           <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">SGPA for Semester 2</label>
+                            <div class="controls">
+                              <input type="text" id="username" name="username" placeholder="Enter SGPA for Semester 2" class="input-xlarge">
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">SGPA for Semester 3</label>
+                            <div class="controls">
+                              <input type="text" id="username" name="username" placeholder="Enter SGPA for Semester 3" class="input-xlarge">
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">SGPA for Semester 4</label>
+                            <div class="controls">
+                              <input type="text" id="username" name="username" placeholder="Enter SGPA for Semester 4" class="input-xlarge">
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">SGPA for Semester 5</label>
+                            <div class="controls">
+                              <input type="text" id="username" name="username" placeholder="Enter SGPA for Semester 5" class="input-xlarge">
+                            </div>
+                          </div>
+
+     
+     
+     
+     
+     
+                        
+                           <br>
+                       <div class="control-group">
+                            <!-- Button -->
+                            <div class="controls">
+                              <button class="btn btn-success btn-lg" name="save2" id="save2">Save</button>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>
+                    </div> 
+                    <div class="tab-pane fade" id="skill">
+                      <form id="tab">
+                        <br>
+                        <fieldset>
+                          <div id="legend">
+                            <legend class="">Skills</legend>
+                          </div>  
+                        <div class="control-group">
+                          <label class="control-label"  for="username">Branch</label>
+                            <div class="controls">
+                <select name="branch"  class="form-control input-sm" id="branch" placeholder="Enter branch">
+                  </select>
+                </div>
+              </div>
+                           <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">Skill 1</label>
+                            <div class="controls">
+                               <select name="skill1"  class="form-control input-sm" id="skill1" placeholder="Enter skill 1">
+                  </select>
+                            </div>
+                          </div>
+                           <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username"> Skill 2</label>
+                            <div class="controls">
+                                <select name="skill2"  class="form-control input-sm" id="skill2" placeholder="Enter skill 2">
+                  </select>
+                            </div>
+                          </div>
+                           <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">Skill 3</label>
+                            <div class="controls">
+                                <select name="skill3"  class="form-control input-sm" id="skill3" placeholder="Enter skill 3">
+                  </select>
+                            </div>
+                          </div>
+                           <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">Preferred company tier</label>
+                            <div class="controls">
+                                <select name="tier"  class="form-control input-sm" id="tier" placeholder="tier">
+                  </select>
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">Type of placement required</label>
+                            <div class="controls">
+                                <select name="type"  class="form-control input-sm" id="type" placeholder="Enter type of placement">
+                  </select>
+                            </div>
+                          </div>
+                          
+     
+     
+     
+     
+                        
+                        <br> 
+                       <div class="control-group">
+                            <!-- Button -->
+                            <div class="controls">
+                              <button class="btn btn-success btn-lg pull-left" name="save3" id="save3">Save</button>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>
+                    </div> 
+
+                   
+                </div>   
+              </div>
+            </div>
+        </div>
+	</div>
+</div>
