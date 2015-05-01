@@ -93,9 +93,19 @@
 
          });
 
+        $('#save1').on('click',function()
+        {
+           $.post('n.php',{'name': $('#name').val(),'rollno': $('#rollno').val(), 'mobile': $('#mobile').val(), 'fblink': $('#fblink').val(), 'linkedin': $('#linkedin').val(),'skypelink': $('#skypelink').val()},function(data) {
+               if(data=='success') {
+                   $('#myModal').modal('show');
 
+               }
+           });
+         return false;
+        });
 
      });
+
  </script>
 
 
@@ -117,7 +127,7 @@
                   </ul>
                   <div id="myTabContent" class="tab-content">
                     <div class="tab-pane active in" id="login">
-                      <form class="form-horizontal" action='' method="POST">
+                      <form class="form-horizontal" action='n.php' method="POST">
                         <br>
                         <fieldset>
                           <div id="legend">
@@ -125,45 +135,45 @@
                           </div>    
                           <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">Name</label>
+                            <label class="control-label"  for="name">Name</label>
                             <div class="controls">
-                              <input type="text" id="username" name="username" placeholder="Enter Name" class="input-xlarge">
+                              <input type="text" id="name" name="name" placeholder="Enter Name" class="input-xlarge">
                             </div>
                           </div>
      
                           <div class="control-group">
                             <!-- Password-->
-                            <label class="control-label" for="password">Roll No</label>
+                            <label class="control-label" for="rollno">Roll No</label>
                             <div class="controls">
-                              <input type="password" id="password" name="password" placeholder="Enter Roll No" class="input-xlarge">
+                              <input type="text" id="rollno" name="rollno" placeholder="Enter Roll No" class="input-xlarge">
                             </div>
                           </div>
                           <div class="control-group">
                             <!-- Password-->
-                            <label class="control-label" for="password">Mobile No</label>
+                            <label class="control-label" for="mobile">Mobile No</label>
                             <div class="controls">
-                              <input type="password" id="password" name="password" placeholder="Enter Mobile No" class="input-xlarge">
+                              <input type="text" id="mobile" name="mobile" placeholder="Enter Mobile No" class="input-xlarge">
                             </div>
                           </div>
                           <div class="control-group">
                             <!-- Password-->
-                            <label class="control-label" for="password">Facebook link</label>
+                            <label class="control-label" for="fblink">Facebook link</label>
                             <div class="controls">
-                              <input type="password" id="password" name="password" placeholder="Enter Facebook Profile Link" class="input-xlarge">
+                              <input type="text" id="fblink" name="fblink" placeholder="Enter Facebook Profile Link" class="input-xlarge">
                             </div>
                           </div>
                           <div class="control-group">
                             <!-- Password-->
-                            <label class="control-label" for="password">LinkedIn link</label>
+                            <label class="control-label" for="linkedin">LinkedIn link</label>
                             <div class="controls">
-                              <input type="password" id="password" name="password" placeholder="Enter LinkedIn Profile Link" class="input-xlarge">
+                              <input type="text" id="linkedin" name="linkedin" placeholder="Enter LinkedIn Profile Link" class="input-xlarge">
                             </div>
                           </div>
                           <div class="control-group">
                             <!-- Password-->
-                            <label class="control-label" for="password">Skype Link</label>
+                            <label class="control-label" for="skypelink">Skype Link</label>
                             <div class="controls">
-                              <input type="password" id="password" name="password" placeholder="Enter Skype Profile Link" class="input-xlarge">
+                              <input type="text" id="skypelink" name="skypelink" placeholder="Enter Skype Profile Link" class="input-xlarge">
                             </div>
                           </div>
      
@@ -186,58 +196,58 @@
                           </div>  
                          <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">Class 10 percentage</label>
+                            <label class="control-label"  for="10percentage">Class 10 percentage</label>
                             <div class="controls">
-                              <input type="text" id="username" name="username" placeholder="Enter class 10 percentage" class="input-xlarge">
+                              <input type="text" id="10percentage" name="10percentage" placeholder="Enter class 10 percentage" class="input-xlarge">
                             </div>
                           </div>
                            <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">Class 12 percentage</label>
+                            <label class="control-label"  for="12percentage">Class 12 percentage</label>
                             <div class="controls">
-                              <input type="text" id="username" name="username" placeholder="Enter class 12 percentage" class="input-xlarge">
+                              <input type="text" id="12percentage" name="12percentage" placeholder="Enter class 12 percentage" class="input-xlarge">
                             </div>
                           </div>
                            <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username"> Overall CGPA</label>
+                            <label class="control-label"  for="cgpa"> Overall CGPA</label>
                             <div class="controls">
-                              <input type="text" id="username" name="username" placeholder="Enter CGPA" class="input-xlarge">
+                              <input type="text" id="cgpa" name="cgpa" placeholder="Enter CGPA" class="input-xlarge">
                             </div>
                           </div>
                            <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">SGPA for Semester 1</label>
+                            <label class="control-label"  for="sgpa1">SGPA for Semester 1</label>
                             <div class="controls">
-                              <input type="text" id="username" name="username" placeholder="Enter SGPA for Semester 1" class="input-xlarge">
+                              <input type="text" id="sgpa1" name="sgpa1" placeholder="Enter SGPA for Semester 1" class="input-xlarge">
                             </div>
                           </div>
                            <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">SGPA for Semester 2</label>
+                            <label class="control-label"  for="sgpa2">SGPA for Semester 2</label>
                             <div class="controls">
-                              <input type="text" id="username" name="username" placeholder="Enter SGPA for Semester 2" class="input-xlarge">
+                              <input type="text" id="sgpa2" name="sgpa2" placeholder="Enter SGPA for Semester 2" class="input-xlarge">
                             </div>
                           </div>
                           <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">SGPA for Semester 3</label>
+                            <label class="control-label"  for="sgpa3">SGPA for Semester 3</label>
                             <div class="controls">
-                              <input type="text" id="username" name="username" placeholder="Enter SGPA for Semester 3" class="input-xlarge">
+                              <input type="text" id="sgpa3" name="sgpa3" placeholder="Enter SGPA for Semester 3" class="input-xlarge">
                             </div>
                           </div>
                           <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">SGPA for Semester 4</label>
+                            <label class="control-label"  for="sgpa4">SGPA for Semester 4</label>
                             <div class="controls">
-                              <input type="text" id="username" name="username" placeholder="Enter SGPA for Semester 4" class="input-xlarge">
+                              <input type="text" id="sgpa4" name="sgpa4" placeholder="Enter SGPA for Semester 4" class="input-xlarge">
                             </div>
                           </div>
                           <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">SGPA for Semester 5</label>
+                            <label class="control-label"  for="sgpa5">SGPA for Semester 5</label>
                             <div class="controls">
-                              <input type="text" id="username" name="username" placeholder="Enter SGPA for Semester 5" class="input-xlarge">
+                              <input type="text" id="sgpa5" name="sgpa5" placeholder="Enter SGPA for Semester 5" class="input-xlarge">
                             </div>
                           </div>
 
@@ -265,49 +275,49 @@
                             <legend class="">Skills</legend>
                           </div>  
                         <div class="control-group">
-                          <label class="control-label"  for="username">Branch</label>
+                          <label class="control-label"  for="branch">Branch</label>
                             <div class="controls">
-                <select name="branch"  class="form-control input-sm" id="branch" placeholder="Enter branch">
+                <select name="branch"  class="form-control input-sm" id="branch" name="branch"  placeholder="Enter branch">
                   </select>
                 </div>
               </div>
                            <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">Skill 1</label>
+                            <label class="control-label"  for="skill1">Skill 1</label>
                             <div class="controls">
-                               <select name="skill1"  class="form-control input-sm" id="skill1" placeholder="Enter skill 1">
+                               <select name="skill1"  class="form-control input-sm" id="skill1" name="skill1" placeholder="Enter skill 1">
                   </select>
                             </div>
                           </div>
                            <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username"> Skill 2</label>
+                            <label class="control-label"  for="skill2"> Skill 2</label>
                             <div class="controls">
-                                <select name="skill2"  class="form-control input-sm" id="skill2" placeholder="Enter skill 2">
+                                <select name="skill2"  class="form-control input-sm" id="skill2" name="skill2" placeholder="Enter skill 2">
                   </select>
                             </div>
                           </div>
                            <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">Skill 3</label>
+                            <label class="control-label"  for="skill3">Skill 3</label>
                             <div class="controls">
-                                <select name="skill3"  class="form-control input-sm" id="skill3" placeholder="Enter skill 3">
+                                <select name="skill3"  class="form-control input-sm" id="skill3" name="skill3" placeholder="Enter skill 3">
                   </select>
                             </div>
                           </div>
                            <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">Preferred company tier</label>
+                            <label class="control-label"  for="tier">Preferred company tier</label>
                             <div class="controls">
-                                <select name="tier"  class="form-control input-sm" id="tier" placeholder="tier">
+                                <select name="tier"  class="form-control input-sm" id="tier" name="tier"  placeholder="tier">
                   </select>
                             </div>
                           </div>
                           <div class="control-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">Type of placement required</label>
+                            <label class="control-label"  for="type">Type of placement required</label>
                             <div class="controls">
-                                <select name="type"  class="form-control input-sm" id="type" placeholder="Enter type of placement">
+                                <select name="type"  class="form-control input-sm" id="type" name="tier"  placeholder="Enter type of placement">
                   </select>
                             </div>
                           </div>
@@ -321,7 +331,7 @@
                        <div class="control-group">
                             <!-- Button -->
                             <div class="controls">
-                              <button class="btn btn-success btn-lg pull-left" name="save3" id="save3">Save</button>
+                              <button class="btn btn-success btn-lg pull-left" name="save3" id="save3">Submit</button>
                             </div>
                           </div>
                         </fieldset>
@@ -335,3 +345,57 @@
         </div>
 	</div>
 </div>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Success</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Your Personal Details have been successfully saved</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success btn-lg" data-dismiss="modal">Ok</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal1" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Success</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Your Educational details have been successfully saved</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success btn-lg" data-dismiss="modal">Ok</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal2" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Success</h4>
+                </div>
+                <div class="modal-body">
+                    <p>You have successfully created your profile</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success btn-lg" data-dismiss="modal">Ok</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
