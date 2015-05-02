@@ -86,7 +86,7 @@
                 <li><a href="mock.html">Mock Papers</a></li>
                 <li><a href="scholarship.html">Alumni</a></li>
                 <li><a href="events-archive.html">Gallery</a></li>
-                <li><a href="gallery.html">Login</a></li>                
+                <li><a id="login" href="#login">Login</a></li>
                 <li><a href="register.php">Register</a></li> 
                 <li><a href="contact.html">Contact</a></li>
               </ul>           
@@ -882,6 +882,95 @@
       <!-- End footer bottom area -->
 
     </footer>
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Login Form</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" action='login.php' method="POST">
+                        <br>
+                        <fieldset>
+                            <div id="legend">
+                                <legend class="">Login Details</legend>
+                            </div>
+                            <div class="control-group">
+                                <!-- Username -->
+                                <label class="control-label"  for="email">Email</label>
+                                <div class="controls">
+                                    <input type="text" id="email" name="email" placeholder="Enter Email" class="input-xlarge">
+                                </div>
+                            </div>
+
+
+                            <div class="control-group">
+                                <!-- Password-->
+                                <label class="control-label" for="password">Password</label>
+                                <div class="controls">
+                                    <input type="password" id="password" name="password" placeholder="Enter Password" class="input-xlarge">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <!-- Password-->
+                                <label class="control-label" for="role">Role</label>
+                                <div class="controls">
+                                    <select name="role"  class="form-control input-sm" id="role"   placeholder="Enter role">
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <button type="button" class="btn btn-success btn-lg" id="login1" data-dismiss="modal">Login</button>
+                        </fieldset>
+                    </form>
+                </div>
+
+                </div>
+                <div class="modal-footer">
+
+
+                </div>
+            </div>
+        </div>
+    <div id="myModal1" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Success</h4>
+                </div>
+                <div class="modal-body">
+                    <p>You have successfully logged in</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success btn-lg" id="login2" data-dismiss="modal"> Click Ok to Continue</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal2" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Failure</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Failed to log in</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-lg" id="login3" data-dismiss="modal"> Back to Login Form</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--=========== END FOOTER SECTION ================--> 
 
   
@@ -897,6 +986,7 @@
     <script src="js/wow.min.js"></script>  
     <!-- Bootstrap js -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
     <!-- slick slider -->
     <script src="js/slick.min.js"></script>
     <!-- superslides slider -->
@@ -913,6 +1003,48 @@
     <!--=============================================== 
     
     ====================================================-->
+  <script>
+      $(document).ready(function() {
+
+          $('#role').append('<option>Select Role</option>');
+          $('#role').append('<option>Student</option>');
+          $('#role').append('<option>Alumni</option>');
+          $('#role').append('<option>Admin</option>');
+          $('#login').on('click', function () {
+              $('#myModal').modal('show');
+          });
+          $('#login1').on('click', function (e) {
+
+              e.preventDefault();
+              $.post('login.php', {
+                  'u': $('#email').val(),
+                  'p': $('#password').val(),
+                  'r': $('#role').val()
+              },function (data) {
+                  if(data=='success') {
+                      $('#myModal1').modal('show');
+                      return false;
+
+                  }
+                  else
+                  {
+                    $('#myModal2').modal('show');
+                      return false;
+                  }
+              });
+
+          });
+          $('#login2').on('click', function () {
+              var d=$('#email').val();
+              var url = "http://localhost/placement/user.php?email="+d;
+              $(location).attr('href', url);
+          });
+          $('#login3').on('click', function () {
+              $('#myModal').modal('show');
+          });
+      });
+
+  </script>
 
 
   </body>
