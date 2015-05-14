@@ -1,4 +1,7 @@
 <?php
+
+ /* $e=$_SESSION['email']; */
+$i=$_POST['e'];
 $n=$_POST['name'];
 $r=$_POST['rollno'];
 $m=$_POST['mobile'];
@@ -10,7 +13,7 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
-$q=$mysqli->query("insert into store(Name,RollNo,MobileNo,FacebookLink,LinkedinLink,SkypeLink) values('$n','$r','$m','$f','$l','$s')");
+$q=$mysqli->query("update store set Name= '$n',RollNo= '$r',MobileNo= '$m',FacebookLink= '$f',LinkedinLink= '$l',SkypeLink= '$s'  where Email= '$i' ");
 $response='success';
 echo $response;
 ?>

@@ -1,15 +1,21 @@
+
+/**
+ * Created by PhpStorm.
+ * User: dlf164
+ * Date: 04-05-2015
+ * Time: 18:19
+ */
 <?php
 session_start();
-$u=$_POST['u'];
+$u=$_POST['e'];
 $p=$_POST['p'];
-$r=$_POST['r'];
 $p=md5($p);
-$mysqli=new mysqli('localhost','root','password','user_details');
+$mysqli=new mysqli('localhost','root','password','user_info');
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
-$q=$mysqli->query("select * from register_info where Email='{$u}' and  Password='{$p}' and Role='{$r}'");
+$q=$mysqli->query("select * from register where Email=' $u' and  Password=' $p ' ");
 $e=$q->num_rows;
 if($e>0)
 {
@@ -26,6 +32,14 @@ else
 }
 
 echo $response;
+
+
+
+?>
+
+
+
+
 
 
 

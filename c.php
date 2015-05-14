@@ -1,5 +1,6 @@
 <?php
 
+$i=$_POST['e'];
 $n=$_POST['10percentage'];
 $r=$_POST['12percentage'];
 $m=$_POST['cgpa'];
@@ -14,7 +15,7 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
-$q=$mysqli->query("insert into store(10percentage,12percentage,cgpa,sgpa1,sgpa2,sgpa3,sgpa4,sgpa5) values('$n','$r','$m','$f','$l','$s','$t','$u')");
+$q=$mysqli->query("update store set 10percentage= '$n',12percentage= '$r',cgpa= '$m',sgpa1= '$f',sgpa2= '$l', sgpa3= '$s', sgpa4= '$t', sgpa5= '$u' where  Email= '$i' ");
 $response='success';
 echo $response;
 ?>

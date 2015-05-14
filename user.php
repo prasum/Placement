@@ -130,10 +130,26 @@ $s=$mysqli->query("select Role from register_info where Email= {'$e'}");
 
 
             $('#profile').on('click',function(e) {
-                e.preventDefault();
-                $('#a').load("hn.html");
+                var s= '<?php echo $_SESSION['email']?>';
+
+                var url = "http://localhost/placement/hn.php?email="+s;
+                $(location).attr('href', url);
             });
+        $('#message').on('click',function(e){
+            var k= '<?php echo $_SESSION['email']?>';
+            var url = "http://localhost/placement/message.php?email="+k;
+            $(location).attr('href', url);
+        });
         $('#logout').on('click',function(e) {
+            $.post('logout.php',function(data)
+            {
+                if(data=='success')
+                {
+                    var url = "http://localhost/placement/index.html";
+                    $(location).attr('href', url);
+                }
+            });
+
         });
         });
 

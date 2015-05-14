@@ -16,6 +16,7 @@ if($_POST['submit'])
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
+    $r=$mysqli->query("insert into store(Email) values('$q') ");
 	$q=$mysqli->query("insert into register_info(FirstName,LastName,Email,Activation,Time,Password,Role) values('$a','$b','$q','$key',CURTIME(),'$p','$c')");
 
    
